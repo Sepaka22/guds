@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: local('Monument Extended-Thin'), local('Monument-Extended-Thin'),
+        url('../fonts/monument-extended-thin.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: local('Monument Extended'), local('Monument-Extended'),
+        url('../fonts/monument-extended-3.woff2') format('woff2'),
+        url('../fonts/monument-extended-3.woff') format('woff'),
+        url('../fonts/monument-extended-3.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: local('Monument Extended Black'), local('Monument-Extended-Black'),
+        url('../fonts/monument-extended.woff2') format('woff2'),
+        url('../fonts/monument-extended.woff') format('woff'),
+        url('../fonts/monument-extended.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
