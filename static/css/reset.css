@@ -8,7 +8,7 @@ button::-moz-focus-inner{border:0;}
 footer,header,main{display:block;}
 li{list-style:none;}
 
-html{height:100%;background-color: transparent; -webkit-tap-highlight-color:transparent;scroll-behavior: auto;}
+html{height:100%;background-color: transparent; -webkit-tap-highlight-color:transparent;scroll-behavior: smooth;}
 body{text-rendering:optimizeLegibility;}
 body > svg{position:absolute;}
 svg,symbol{overflow:visible;fill:currentColor;}

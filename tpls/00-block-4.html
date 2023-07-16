@@ -1,0 +1,130 @@
+<div class="s4-1">
+
+    <div class="s4-3">
+
+        <div class="s4-4">
+            <div class="s4-12">
+
+                <div class="s4-6 hl">
+                    <div class="s4-7">Pay&thinsp;&amp;</div>
+                    <div class="s4-8">Earn </div>
+                    <div class="s4-9 th">Invest</div>
+                    <div class="s4-10">ReFi</div>
+                    <div class="s4-11 th em">Fundraise</div>
+                </div>
+
+
+            </div>
+
+
+            <div class="s4-2 paroller">
+                <img src="static/img/diamonds3-1.png" alt="" class="contain desktop">
+                <img src="static/img/diamonds3-1-1.png" alt="" class="contain mobile">
+            </div>
+
+            <div class="s4-13">
+                <div class="s4-14">
+                    <div class="s4-15 hl em">$<var class="th" id="slider-text">101,000</var></div>
+                    <div class="s4-16">
+                        <div class="s4-17">
+
+                            <div id="slider" class="slider"></div>
+                            <input type="hidden" id="slider-val" value="101000">
+
+                        </div>
+                        <div class="s4-18">Roll the Diamond DeFi</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="s4-19 hl">
+                        Your <span class="em th">passive</span> income<br>
+                        if stacked
+                    </div>
+
+                    <div class="s4-20 hl">
+                        <div class="s4-21">
+                            <span class="s4-22">+<span class="unl">$<var id="ppd">500.00</var></span></span> / per day
+                        </div>
+                        <div class="s4-21">
+                            <span class="s4-22">+<span class="unl">$<var id="ppm">7,500</var></span></span> / per month
+                        </div>
+                        <div class="s4-21">
+                            <span class="s4-22 c3">+<span class="unl">$<var id="ppy">70,500</var></span></span> / per year
+                        </div>
+                    </div>
+
+                    <div class="s4-23">
+                        <a href="#" class="button button__submit button__submit2">
+                            <span class="button-icon">
+                                <svg class="icon">
+                                    <use xlink:href="#i-circle"></use>
+                                </svg>
+                            </span>
+                            <span class="button-text">Earn Now</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="s4-5">
+            <div class="s4-24">
+                <div class="hl">PERSONAL INVESTMENT PLAN</div>
+            </div>
+            <div class="s4-25">
+                <svg class="icon">
+                    <use xlink:href="#i-arrcr"></use>
+                </svg>
+            </div>
+            <div class="s4-26 js-bounce-button">
+                <a href="#" class="button button__default button__dense">
+                    <span class="button-icon">
+                        <svg class="icon">
+                            <use xlink:href="#i-gem"></use>
+                        </svg>
+                    </span>
+                    <span class="button-text">CONTACT VIP GATO CONCIERGE </span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(function() {
+        var prices = [5000, 10000, 50000, 100000, 101000];
+        var perc = [12, 15, 18, 20, 0];
+        var opts = {
+            minimumFractionDigits: 2
+        };
+
+        $('#slider').slider({
+            min: 0,
+            max: prices.length - 1,
+            value: 101000,
+            slide: function(event, ui) {
+
+                var d = ui.value,
+                    p = perc[d],
+                    py = p ? prices[d] * p / 100 : 70500,
+                    pm = p ? (prices[d] + py) / 12 : 7500,
+                    pd = p ? (prices[d] + py) / 365 : 500
+
+
+                py = Math.round(py);
+                pm = Math.round(pm);
+                pd = Math.round(pd * 100) / 100;
+
+                $('#slider-val').val(prices[d]);
+                $('#slider-text').text(prices[d].toLocaleString('en-US'));
+                $('#ppd').text(pd.toLocaleString('en-US', opts));
+                $('#ppm').text(pm.toLocaleString('en-US'));
+                $('#ppy').text(py.toLocaleString('en-US'));
+
+                $(".js-bounce-button").toggleClass("active", d == (prices.length - 1));
+            }
+        });
+    });
+
+</script>
